@@ -1,15 +1,14 @@
 <html>
-    <head>
-	<title>GunjuKo blog</title>
-    </head>
-    <body>
-	<div>
-	    <h1><a href="">GunjuKo Blog</a></h1>
-        </div>
-
-	<div>
-	    <p>published: 2017/02/19 </p>
-	    <h2><a href="http://gunju92.tistory.com">My another blog</a></h2>
+	<head>
+		<title>GunjuKo Blog</title>
+	</head>
+	<body>
+	{% for post in posts %}
+    <div>
+	    <p>published: {{ post.published_date }}</p>
+		<h1><a href="">{{ post.title }}</a></h1>
+		<p>{{ post.text|linebreaksbr }}</p>
 	</div>
-    </body>
-</html> 
+	{% endfor %}
+	</body>
+</html>
